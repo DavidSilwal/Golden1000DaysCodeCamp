@@ -1,0 +1,34 @@
+﻿@model List<WebApplication.Data.Role>
+@{
+    ViewData["Title"] = "Roles";
+ 
+}
+<h2>@ViewData["Title"]</h2>
+<p>
+    <a asp-action="Create" type="button" class="btn btn-info btn-sm">Create New</a>
+</p>
+
+    <div class="panel-body">
+        <div class="table-responsive text-center">
+            <table class="table table-bordered table-striped table-hover">
+                
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="text-center">@Html.DisplayFor(modelItem => item.Name)</td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id" type="button" class="btn btn-info">Edit</a>
+                               
+                                <a asp-action="Details" asp-route-id="@item.Id" type="button" class="btn btn-info">Details</a>
+                              
+                                <a asp-action="Delete" asp-route-id="@item.Id" type="button" class="btn btn-info" >Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

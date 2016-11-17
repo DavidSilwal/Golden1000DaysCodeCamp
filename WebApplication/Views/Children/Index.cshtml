@@ -1,0 +1,44 @@
+@model IEnumerable<WebApplication.Data.Child>
+
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "~/Views/Shared/_CreateViewPartial.cshtml";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BGroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BGroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ChildID" type="button" class="btn btn-info">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ChildID" type="button" class="btn btn-info">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ChildID" type="button" class="btn btn-info">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

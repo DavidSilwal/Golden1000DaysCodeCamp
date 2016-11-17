@@ -1,0 +1,53 @@
+@model IEnumerable<WebApplication.Data.Mother>
+
+@{
+    ViewData["Title"] = "Index";
+    //Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MotherID" type="button" class="btn btn-info">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MotherID" type="button" class="btn btn-info">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MotherID" type="button" class="btn btn-info">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,75 @@
+﻿@model WebApplication.Models.DashboardViewModel
+
+
+<div>
+    <h2 class="text-center">Mother Information</h2>
+   
+
+    <table class="table table-striped table-bordered table-hover text-center" >
+        <tr><td>MotherName:</td><td>@Model.Mother.FName,</td></tr>
+        <tr><td>LName:</td><td>@Model.Mother.LName</td></tr>
+        <tr><td>Age:</td><td>@Model.Mother.Age</td></tr>
+        <tr><td>Phone:</td><td>@Model.Mother.PhoneNo</td></tr>
+    </table>
+
+     
+
+
+            @*<div>
+                @foreach(var item in Model.VacDones)
+                {
+                  //  @item.Mother.VacDones
+
+
+                }
+            </div>
+
+            @foreach (var item in Model.Pregnancy)
+            {
+                @item.PregNo
+                @item.LMD
+            }
+                    @foreach (var item in Model.Child)
+        {
+            @item.Name
+            @item.DOB
+
+        }
+
+
+
+
+
+
+
+            @foreach(var item in Model.CheckupsDone)
+            {
+                @item.CheckupsDoneID
+
+
+                    <div>
+
+                @foreach (var item in Model.Checkups)
+                {
+                    @item.Name
+                    @item.Patients
+                    @item.Period
+
+                }
+
+            </div>
+
+
+
+            }*@
+
+    @*<div>
+    @foreach(var item in Model.MotherExamination)
+    {
+
+        @item.Advice
+        @item.BloodPressure
+    }
+        </div>*@
+
+</div>

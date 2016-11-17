@@ -1,0 +1,49 @@
+@model IEnumerable<WebApplication.Data.Checkups>
+
+@{
+    ViewData["Title"] = "Index";
+    
+
+}
+
+<div class="text-center">
+    
+    <table class="table table-hover table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Patients)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Period)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Patients)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Period)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.CheckupsID" class="btn btn-info">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.CheckupsID" class="btn btn-info">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.CheckupsID" class="btn btn-info">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

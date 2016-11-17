@@ -1,0 +1,57 @@
+@model List<WebApplication.Data.User>
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+
+
+<div class="panel mb25">
+    <div class="panel-heading">
+        <span>Users</span>
+        <span class="pull-right">
+            <a asp-action="Create">Create New</a>
+        </span>
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped mb0">
+                <thead>
+                    <tr>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Email)*@
+                            <label>Email</label>
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.UserName)*@
+
+                            <label>UserName</label>
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.Id" title="Edit" class="btn btn-info"> Edit </a>
+                                &nbsp;
+                                <a asp-action="Details" asp-route-id="@item.Id"  title="Details" class="btn btn-info"> Details</a>
+                                &nbsp;
+                                <a asp-action="ChangePassword" asp-route-id="@item.Id" title="Change Password" class="btn btn-info"> Change Password</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
